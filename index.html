@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Java Script</title>
+</head>
+<body>
+<div id="t"></div>
+<script>
+	const url = window.location;
+
+	console.log(url);
+
+	const body = document.getElementById('t')
+
+	if(url.pathname === '/') {
+
+		body.innerHTML = 'Hello Index';
+
+	} else if(url.pathname === '/about') {
+
+		body.innerHTML = 'Hello About';
+
+	} else {
+		body.innerHTML = 'Articles';
+	}
+const page = 'test.html';
+
+fetch(page)
+  .then(function(response) {
+    return response.text();
+   })
+  .then(function(user) {
+    body.innerHTML = user;
+  });
+
+ 
+</script>
+</body>
+</html>
